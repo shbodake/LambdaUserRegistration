@@ -21,20 +21,30 @@ public class ExceptionUserRegistration
         Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
-    public boolean emailId(String emailIds) {
+    public boolean emailId(String emailIds)
+    {
         regex = "^[a-zA-Z-9]+([._+-]*[0-9A-Za-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-z]{2,4})?$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(emailIds);
         return matcher.matches();
     }
-    public boolean mobileNumber(String mobileNumber) {
+    public boolean mobileNumber(String mobileNumber)
+    {
         regex = "^[0-9]{2}\\s{1}[0-9]{10}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(mobileNumber);
         return matcher.matches();
     }
-    public boolean passwordRule1(String password) {
+    public boolean passwordRule1(String password)
+    {
         regex = "^[a-z]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+    public boolean passwordRule2(String password)
+    {
+        regex = "^[a-z](?=.*[A-Z]+).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
