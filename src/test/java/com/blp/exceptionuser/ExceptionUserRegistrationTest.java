@@ -84,5 +84,4 @@ public class ExceptionUserRegistrationTest
         boolean actualResult = exceptionUserRegistration.passwordRule2("jnsdjcvcp");
         Assert.assertEquals(false, actualResult);
     }
-
 }
