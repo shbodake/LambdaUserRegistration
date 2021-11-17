@@ -10,30 +10,43 @@ public class ExceptionUserRegistrationTest
     ExceptionUserRegistration exceptionUserRegistration = new ExceptionUserRegistration();
 
     @Test
-    public void givenFirstName_IsProper_ReturnTrue()
+    public void givenFirstNameIsProperReturnTrue()
     {
         boolean actualResult = exceptionUserRegistration.firstName("Sayali");
         Assert.assertEquals(true, actualResult);
     }
 
     @Test
-    public void givenFirstName_IsProper_ReturnFalse()
+    public void givenFirstNameIsProperReturnFalse()
     {
         boolean actualResult = exceptionUserRegistration.firstName("SaYali");
         Assert.assertEquals(false, actualResult);
     }
 
     @Test
-    public void givenLastName_IsProper_ReturnTrue()
+    public void givenLastNameIsProperReturnTrue()
     {
         boolean actualResult = exceptionUserRegistration.firstName("Bodake");
         Assert.assertEquals(true, actualResult);
     }
 
     @Test
-    public void givenLastName_IsProper_ReturnFalse()
+    public void givenLastNameIsProperReturnFalse()
     {
         boolean actualResult = exceptionUserRegistration.firstName("BodaKE");
         Assert.assertEquals(false, actualResult);
     }
+
+    @Test
+    public void givenEmailIdIsProperReturnTrue() {
+        boolean actualResult = exceptionUserRegistration.emailId("sayalibodake28@gmail.com");
+        Assert.assertEquals(true, actualResult);
+    }
+
+    @Test
+    public void givenEmailIdIsNotProperReturnFalse() {
+        boolean actualResult = exceptionUserRegistration.emailId("sayalibodake28gmail.com");
+        Assert.assertEquals(false, actualResult);
+    }
+
 }
